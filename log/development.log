@@ -1,0 +1,1221 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (33.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (16.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMessages (20121103083232)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar(255), "subject" varchar(255), "to" varchar(255), "date" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121103083232')
+  [1m[36m (265.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateLocations (20121103181743)
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar(255), "gmaps" boolean, "latitude" float, "longitude" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121103181743')
+  [1m[36m (17.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (3.0ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("locations")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("messages")[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/locations/" for 127.0.0.1 at 2012-11-03 14:29:06 -0400
+
+SyntaxError (D:/workspace/yoda/app/controllers/locations_controller.rb:56: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...render json:@location, status :created, location :@location }
+...                               ^
+D:/workspace/yoda/app/controllers/locations_controller.rb:59: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...json:@location.errors, status :unprocessable_entity }
+...                               ^
+D:/workspace/yoda/app/controllers/locations_controller.rb:75: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...json:@location.errors, status :unprocessable_entity }
+...                               ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__1062710449__call__73426886__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (127.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (448.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:32:55 -0400
+
+SyntaxError (D:/workspace/yoda/app/controllers/locations_controller.rb:55: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...edirect_to @location, notice :'Location was successfully cre...
+...                               ^
+D:/workspace/yoda/app/controllers/locations_controller.rb:56: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...ender json :@location, status :created, location :@location }
+...                               ^
+D:/workspace/yoda/app/controllers/locations_controller.rb:59: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...son :@location.errors, status :unprocessable_entity }
+...                               ^
+D:/workspace/yoda/app/controllers/locations_controller.rb:75: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...son :@location.errors, status :unprocessable_entity }
+...                               ^):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__748899893__call__209732061__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (100.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (479.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:46:12 -0400
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (344.0ms)
+  Rendered locations/new.html.erb within layouts/application (966.1ms)
+Completed 500 Internal Server Error in 2968ms
+
+ActionView::Template::Error (undefined method `name' for #<Location:0x4147560>):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :name %><br />
+    16:     <%= f.text_field :name %>
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :address %><br />
+  app/views/locations/_form.html.erb:16:in `block in _app_views_locations__form_html_erb__838527307_25967412'
+  app/views/locations/_form.html.erb:1:in `_app_views_locations__form_html_erb__838527307_25967412'
+  app/views/locations/new.html.erb:3:in `_app_views_locations_new_html_erb___164850759_37328064'
+  app/controllers/locations_controller.rb:37:in `new'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (193.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:47:18 -0400
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (18.0ms)
+  Rendered locations/new.html.erb within layouts/application (44.0ms)
+Compiled locations.css  (247ms)  (pid 47896)
+Compiled messages.css  (13ms)  (pid 47896)
+Compiled scaffolds.css  (127ms)  (pid 47896)
+Compiled application.css  (1249ms)  (pid 47896)
+Compiled jquery.js  (229ms)  (pid 47896)
+Compiled jquery_ujs.js  (1ms)  (pid 47896)
+Compiled locations.js  (7859ms)  (pid 47896)
+Compiled messages.js  (4963ms)  (pid 47896)
+Compiled application.js  (14301ms)  (pid 47896)
+Completed 200 OK in 17363ms (Views: 17362.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:47:36 -0400
+Served asset /all.css - 404 Not Found (29ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:47:36 -0400
+Served asset /defaults.js - 404 Not Found (51ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:47:36 -0400
+Served asset /application.css - 304 Not Modified (109ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /messages.css - 200 OK (18ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /locations.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /jquery_ujs.js - 200 OK (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /jquery.js - 200 OK (19ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /locations.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:47:37 -0400
+Served asset /scaffolds.css - 304 Not Modified (106ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:47:38 -0400
+Served asset /messages.js - 200 OK (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:47:38 -0400
+Served asset /application.js - 304 Not Modified (100ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2012-11-03 14:47:48 -0400
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c5697jTsKFLUSPUq0AQOLv2bU49pY4DDd2P6kaVIplI=", "location"=>{"address"=>"CMU", "longitude"=>"", "latitude"=>""}, "commit"=>"Create Location"}
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (218.0ms)[0m  INSERT INTO "locations" ("address", "created_at", "gmaps", "latitude", "longitude", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "CMU"], ["created_at", Sat, 03 Nov 2012 18:47:49 UTC +00:00], ["gmaps", true], ["latitude", 40.4435092], ["longitude", -79.9415709], ["updated_at", Sat, 03 Nov 2012 18:47:49 UTC +00:00]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/1
+Completed 302 Found in 1241ms (ActiveRecord: 233.0ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2012-11-03 14:47:50 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 164ms
+
+NameError (undefined local variable or method `name' for #<Location:0x42f9318>):
+  app/models/location.rb:15:in `gmaps4rails_infowindow'
+  app/controllers/locations_controller.rb:25:in `show'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (187.0ms)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2012-11-03 14:48:49 -0400
+
+SyntaxError (D:/workspace/yoda/app/models/location.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  geocoded_by :address
+               ^):
+  app/controllers/locations_controller.rb:1:in `<top (required)>'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (272.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:49:39 -0400
+
+SyntaxError (D:/workspace/yoda/app/models/location.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  geocoded_by :address
+               ^):
+  app/controllers/locations_controller.rb:1:in `<top (required)>'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (163.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:50:39 -0400
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (54.0ms)
+  Rendered locations/new.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 412ms (Views: 368.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:50:40 -0400
+Served asset /all.css - 404 Not Found (63ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:50:40 -0400
+Served asset /defaults.js - 404 Not Found (34ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:50:41 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:50:42 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:50:42 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2012-11-03 14:50:50 -0400
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c5697jTsKFLUSPUq0AQOLv2bU49pY4DDd2P6kaVIplI=", "location"=>{"address"=>"CMU", "longitude"=>"", "latitude"=>""}, "commit"=>"Create Location"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (100.0ms)[0m  INSERT INTO "locations" ("address", "created_at", "gmaps", "latitude", "longitude", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "CMU"], ["created_at", Sat, 03 Nov 2012 18:50:51 UTC +00:00], ["gmaps", true], ["latitude", 40.4435092], ["longitude", -79.9415709], ["updated_at", Sat, 03 Nov 2012 18:50:51 UTC +00:00]]
+  [1m[36m (24.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/2
+Completed 302 Found in 1272ms (ActiveRecord: 124.0ms)
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2012-11-03 14:50:51 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "2"]]
+Completed 500 Internal Server Error in 19ms
+
+NameError (undefined local variable or method `name' for #<Location:0x474efb8>):
+  app/models/location.rb:15:in `gmaps4rails_infowindow'
+  app/controllers/locations_controller.rb:25:in `show'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (243.0ms)
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2012-11-03 14:51:05 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered locations/show.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 393ms
+
+ActionView::Template::Error (undefined method `name' for #<Location:0x45ac248>):
+    2: 
+    3: <p>
+    4:   <b>Name:</b>
+    5:   <%= @location.name %>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/locations/show.html.erb:5:in `_app_views_locations_show_html_erb___989328194_36928836'
+  app/controllers/locations_controller.rb:26:in `show'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (174.0ms)
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2012-11-03 14:51:38 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (7.0ms)
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 40.4435092) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -79.9415709) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 40.4435092 AND locations.longitude >= -79.9415709) THEN 45.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude >= -79.9415709) THEN 135.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude < -79.9415709) THEN 225.0 WHEN (locations.latitude >= 40.4435092 AND locations.longitude < -79.9415709) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 25.970330888915207 AND 54.916687511084795 AND locations.longitude BETWEEN -98.95905452380066 AND -60.92408727619935 AND locations.id != 2) ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (234.0ms)
+Completed 200 OK in 581ms (Views: 575.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:51:39 -0400
+Served asset /all.css - 404 Not Found (103ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:51:39 -0400
+Served asset /defaults.js - 404 Not Found (44ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /messages.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /locations.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:51:40 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:51:41 -0400
+Served asset /messages.js - 304 Not Modified (1ms)
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2012-11-03 14:52:49 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (6.0ms)
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 40.4435092) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -79.9415709) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 40.4435092 AND locations.longitude >= -79.9415709) THEN 45.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude >= -79.9415709) THEN 135.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude < -79.9415709) THEN 225.0 WHEN (locations.latitude >= 40.4435092 AND locations.longitude < -79.9415709) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 25.970330888915207 AND 54.916687511084795 AND locations.longitude BETWEEN -98.95905452380066 AND -60.92408727619935 AND locations.id != 2) ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 281ms (Views: 273.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:52:49 -0400
+Served asset /all.css - 404 Not Found (27ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /defaults.js - 404 Not Found (36ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:52:50 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:52:51 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:52:51 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2012-11-03 14:53:07 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (4.0ms)
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 40.4435092) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -79.9415709) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 40.4435092 AND locations.longitude >= -79.9415709) THEN 45.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude >= -79.9415709) THEN 135.0 WHEN (locations.latitude < 40.4435092 AND locations.longitude < -79.9415709) THEN 225.0 WHEN (locations.latitude >= 40.4435092 AND locations.longitude < -79.9415709) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 25.970330888915207 AND 54.916687511084795 AND locations.longitude BETWEEN -98.95905452380066 AND -60.92408727619935 AND locations.id != 2) ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (203.0ms)
+Completed 200 OK in 815ms (Views: 806.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:53:08 -0400
+Served asset /all.css - 404 Not Found (50ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:53:08 -0400
+Served asset /defaults.js - 404 Not Found (112ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:09 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:10 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:10 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:53:22 -0400
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (10.0ms)
+  Rendered locations/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 157ms (Views: 155.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:53:23 -0400
+Served asset /defaults.js - 404 Not Found (56ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:23 -0400
+Served asset /locations.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:53:23 -0400
+Served asset /all.css - 404 Not Found (101ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:23 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:24 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:24 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:24 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:24 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:24 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:25 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:25 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2012-11-03 14:53:32 -0400
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c5697jTsKFLUSPUq0AQOLv2bU49pY4DDd2P6kaVIplI=", "location"=>{"address"=>"Squiril Hill", "longitude"=>"", "latitude"=>""}, "commit"=>"Create Location"}
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "locations" ("address", "created_at", "gmaps", "latitude", "longitude", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "Squiril Hill"], ["created_at", Sat, 03 Nov 2012 18:53:32 UTC +00:00], ["gmaps", true], ["latitude", 40.438072], ["longitude", -79.922972], ["updated_at", Sat, 03 Nov 2012 18:53:32 UTC +00:00]]
+  [1m[35m (16.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/locations/3
+Completed 302 Found in 490ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/locations/3" for 127.0.0.1 at 2012-11-03 14:53:32 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (3.0ms)
+  [1m[35mLocation Load (1.0ms)[0m  SELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 40.438072) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -79.922972) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 40.438072 AND locations.longitude >= -79.922972) THEN 45.0 WHEN (locations.latitude < 40.438072 AND locations.longitude >= -79.922972) THEN 135.0 WHEN (locations.latitude < 40.438072 AND locations.longitude < -79.922972) THEN 225.0 WHEN (locations.latitude >= 40.438072 AND locations.longitude < -79.922972) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 25.964893688915204 AND 54.91125031108479 AND locations.longitude BETWEEN -98.93891754662272 AND -60.907026453377284 AND locations.id != 3) ORDER BY distance ASC
+  Rendered locations/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 164ms (Views: 157.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:53:33 -0400
+Served asset /defaults.js - 404 Not Found (32ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:53:33 -0400
+Served asset /all.css - 404 Not Found (92ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:34 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:35 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:35 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:35 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2012-11-03 14:53:51 -0400
+Processing by LocationsController#new as HTML
+  Rendered locations/_form.html.erb (11.0ms)
+  Rendered locations/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 311ms (Views: 309.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:53:52 -0400
+Served asset /all.css - 404 Not Found (45ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:52 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:53:52 -0400
+Served asset /defaults.js - 404 Not Found (47ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:53 -0400
+Served asset /locations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:54 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:53:54 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2012-11-03 14:54:00 -0400
+Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c5697jTsKFLUSPUq0AQOLv2bU49pY4DDd2P6kaVIplI=", "location"=>{"address"=>"Giant Eagle", "longitude"=>"", "latitude"=>""}, "commit"=>"Create Location"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "locations" ("address", "created_at", "gmaps", "latitude", "longitude", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "Giant Eagle"], ["created_at", Sat, 03 Nov 2012 18:54:00 UTC +00:00], ["gmaps", true], ["latitude", 40.4566538], ["longitude", -79.93445539999999], ["updated_at", Sat, 03 Nov 2012 18:54:00 UTC +00:00]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/locations/4
+Completed 302 Found in 389ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/locations/4" for 127.0.0.1 at 2012-11-03 14:54:00 -0400
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (7.0ms)
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 40.4566538) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - -79.93445539999999) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 40.4566538 AND locations.longitude >= -79.93445539999999) THEN 45.0 WHEN (locations.latitude < 40.4566538 AND locations.longitude >= -79.93445539999999) THEN 135.0 WHEN (locations.latitude < 40.4566538 AND locations.longitude < -79.93445539999999) THEN 225.0 WHEN (locations.latitude >= 40.4566538 AND locations.longitude < -79.93445539999999) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN 25.983475488915204 AND 54.92983211108479 AND locations.longitude BETWEEN -98.95565910894759 AND -60.913251691052395 AND locations.id != 4) ORDER BY distance ASC[0m
+  Rendered locations/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 237ms (Views: 231.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2012-11-03 14:54:01 -0400
+Served asset /all.css - 404 Not Found (37ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-11-03 14:54:01 -0400
+Served asset /defaults.js - 404 Not Found (37ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered D:/CMU/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locations.css?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /locations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-03 14:54:02 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/locations.js?body=1" for 127.0.0.1 at 2012-11-03 14:54:03 -0400
+Served asset /locations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-11-03 14:54:03 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-03 14:54:03 -0400
+Served asset /application.js - 304 Not Modified (3ms)
